@@ -1,5 +1,7 @@
 # SvgGenerator
 
+Xavier J Harding
+
 This project provides a tiny, deterministic SVG generator used as the base
 repository for the course. It models images composed of SVG elements and renders
 them to a string output.
