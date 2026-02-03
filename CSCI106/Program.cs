@@ -6,7 +6,7 @@
         {
             var svg = SvgBuilder.New((500, 500));
 
-            svg.makeRect(50, 50, 20, 7);
+            svg.makeRect(50, 50, 100, 50);
 
             var path = "C:\\Users\\Xavier Harding\\csci-106\\CSCI106\\test.svg";
 

@@ -7,7 +7,9 @@
 
         public void makeRect(int x, int y, int width, int height)
         {
-            Buffer += "I MADE A RECTANGLE YAAYYY"; 
+            //style it like html... REMEBER ARMSTRONG!
+            //"don't hard code the tag in test.svg, just make your tag in the buffer with the attributes" (it's so simple Mr. Harding, stop overthinking...)"
+            Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}'/>"; 
         }
         private const string MAKING_RECT_STRING = "<svg width=\"{5}\" height=\"{7}\" x=\"{50}\" y=\"{50}\" xmlns=\"http://www.w3.org/2000/svg\">";
 
