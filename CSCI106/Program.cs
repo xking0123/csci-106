@@ -4,9 +4,15 @@
     {
         static void Main()
         {
-            var svg = SvgBuilder.New((500, 500));
+            var svg = SvgBuilder.New((1, 1));
 
-            svg.makeRect(50, 50, 100, 50);
+            //rect 1
+            svg.makeRect(0, 0, 100, 50);
+            svg.validateRect(0, 0, 100, 50);
+
+            //rect 2
+            svg.makeRect(501, 501, 1000, 1000);
+            svg.validateRect(501, 501, 1000, 1000);
 
             var path = "C:\\Users\\Xavier Harding\\csci-106\\CSCI106\\test.svg";
 
