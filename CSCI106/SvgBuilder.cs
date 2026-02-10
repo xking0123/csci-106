@@ -9,7 +9,12 @@
         {
             //style it like html... REMEBER ARMSTRONG!
             //"don't hard code the tag in test.svg, just make your tag in the buffer with the attributes" (it's so simple Mr. Harding, stop overthinking...)"
+            
+            validateRect(x, y, width, height);
             Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}'/>";
+
+            //validate here
+
         }
 
         public void validateRect(int x, int y, int width, int height)
@@ -17,8 +22,10 @@
             if (x <= Width && y <= Height)
             {
                 //for valid
+                isOverlappingX(x, width);
                 Console.WriteLine("Good Job :)");
-                makeRect(x, y, width, height);
+                
+                //ask if it's overlapping X and Y
             }
             else
             {
@@ -43,6 +50,9 @@
         //x + width = right edge
         //Width = right edge corner of svg
         //width = how wide object is
+
+        //make inverse (OVERLAPPING Y)
+        //make sure width and height are positive (anything higher than 0)
 
         private const string MAKING_RECT_STRING = "<svg width=\"{5}\" height=\"{7}\" x=\"{50}\" y=\"{50}\" xmlns=\"http://www.w3.org/2000/svg\">";
 
