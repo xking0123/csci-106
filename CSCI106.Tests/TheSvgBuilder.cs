@@ -16,6 +16,7 @@ namespace CSCI106.Tests
         [TestCase(6, 7, ExpectedResult = true)]
         [TestCase(-3, 2, ExpectedResult = false)]
         [TestCase(8, 1, ExpectedResult = false)]
+        
         public bool isOverlappingX(int x, int width)
         {
             var svg = SvgBuilder.New((7, 456));

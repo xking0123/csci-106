@@ -44,12 +44,6 @@
         //Width = right edge corner of svg
         //width = how wide object is
 
-        // public bool isOverlappingX(int x, int width)
-        // {
-        //     return x < Width && x + width > 0;
-        // }
-
-
         private const string MAKING_RECT_STRING = "<svg width=\"{5}\" height=\"{7}\" x=\"{50}\" y=\"{50}\" xmlns=\"http://www.w3.org/2000/svg\">";
 
         private string Buffer;
