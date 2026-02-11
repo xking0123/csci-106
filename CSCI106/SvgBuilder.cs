@@ -10,22 +10,22 @@
             //style it like html... REMEBER ARMSTRONG!
             //"don't hard code the tag in test.svg, just make your tag in the buffer with the attributes" (it's so simple Mr. Harding, stop overthinking...)"
             
-            validateRect(x, y, width, height);
-            Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}'/>";
-
             //validate here
+            validateRect(x, y, width, height);
 
+            Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}'/>";
         }
 
         public void validateRect(int x, int y, int width, int height)
         {
             if (x <= Width && y <= Height)
             {
+                //ask if it's overlapping X and Y
+
                 //for valid
                 isOverlappingX(x, width);
+                isOverlappingY(y, height);
                 Console.WriteLine("Good Job :)");
-                
-                //ask if it's overlapping X and Y
             }
             else
             {
@@ -35,6 +35,7 @@
             }
         }
 
+        //make sure width and height are positive (anything higher than 0)
         public bool isOverlappingX(int x, int width)
         {
             if(x < Width && x + width > 0)
@@ -52,7 +53,14 @@
         //width = how wide object is
 
         //make inverse (OVERLAPPING Y)
-        //make sure width and height are positive (anything higher than 0)
+        public bool isOverlappingY(int y, int height)
+        {
+            if(y < Height && y + height > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
         private const string MAKING_RECT_STRING = "<svg width=\"{5}\" height=\"{7}\" x=\"{50}\" y=\"{50}\" xmlns=\"http://www.w3.org/2000/svg\">";
 
