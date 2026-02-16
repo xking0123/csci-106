@@ -5,15 +5,29 @@
         private const string SVG_HEADER_TEMPLATE = "<svg width=\"{0}\" height=\"{1}\" xmlns=\"http://www.w3.org/2000/svg\">";
         private const string SVG_FOOTER = "</svg>";
 
-        public void makeRect(int x, int y, int width, int height)
+        //handle invalid input (make user change numbers?) rather than simply code breaking
+
+        //add color to the rectangle as well?
+        public void makeRect(int x, int y, int width, int height, string color)
         {
-            //style it like html... REMEBER ARMSTRONG!
-            //"don't hard code the tag in test.svg, just make your tag in the buffer with the attributes" (it's so simple Mr. Harding, stop overthinking...)"
-            
+            //make x y width and height user inputted and pass them into function
+            Console.WriteLine("Enter an x value for the rectangle: ");
+            x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a y value for the rectangle: ");
+            y = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a width value for the rectangle: ");
+            width = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a height value for the rectangle: ");
+            height = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a color value for the rectangle: ");
+            color = Console.ReadLine();
+
             //validate here
             validateRect(x, y, width, height);
 
-            Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}'/>";
+            //style it like html... REMEMBER ARMSTRONG!
+            //"don't hard code the tag in test.svg, just make your tag in the buffer with the attributes" (it's so simple Mr. Harding, stop overthinking...)"
+            Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}' fill='{color}'/>";
         }
 
         public void validateRect(int x, int y, int width, int height)
@@ -38,11 +52,11 @@
         //make sure width and height are positive (anything higher than 0)
         public bool isOverlappingX(int x, int width)
         {
-            if(x < Width && x + width > 0)
+            if (x < Width && x + width > 0)
             {
                 return true;
-            //x < Width = left side within svg
-            //x + width > 0 = right side within svg. how it becomes an overlap in the first place, the "width" drags it out
+                //x < Width = left side within svg
+                //x + width > 0 = right side within svg. how it becomes an overlap in the first place, the "width" drags it out
             }
             return false;
         }
@@ -55,9 +69,11 @@
         //make inverse (OVERLAPPING Y)
         public bool isOverlappingY(int y, int height)
         {
-            if(y < Height && y + height > 0)
+            if (y < Height && y + height > 0)
             {
                 return true;
+                //y < Hidth = top part within svg
+                //y + height > 0 = bottom part within svg. how it becomes an overlap in the first place, the "height" drags it out
             }
             return false;
         }
