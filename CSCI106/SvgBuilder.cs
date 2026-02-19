@@ -27,13 +27,11 @@
                 //for valid
                 isOverlappingX(x, width);
                 isOverlappingY(y, height);
-                Console.WriteLine("Good Job :)");
                 return true;
             }
             else
             {
                 //for invalid
-                Console.WriteLine("Invalid rect, try again");
                 return false;
                 throw new Exception("X or Y may be too big, rect no fit in viable space");
 
