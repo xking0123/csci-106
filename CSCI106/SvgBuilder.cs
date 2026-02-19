@@ -5,14 +5,20 @@
         private const string SVG_HEADER_TEMPLATE = "<svg width=\"{0}\" height=\"{1}\" xmlns=\"http://www.w3.org/2000/svg\">";
         private const string SVG_FOOTER = "</svg>";
 
-        public void makeRect(int x, int y, int width, int height, string color)
+        public bool makeRect(int x, int y, int width, int height, string color)
         {
             //validate here
-            validateRect(x, y, width, height);
-            Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}' fill='{color}'/>";
+            if (validateRect(x, y, width, height))
+            {
+                Buffer += $"<rect x='{x}' y='{y}' width='{width}' height='{height}' fill='{color}'/>";
+                return true;
+            }
+            return false;
+
+
         }
 
-        public void validateRect(int x, int y, int width, int height)
+        public bool validateRect(int x, int y, int width, int height)
         {
             if (x <= Width && y <= Height)
             {
@@ -22,12 +28,15 @@
                 isOverlappingX(x, width);
                 isOverlappingY(y, height);
                 Console.WriteLine("Good Job :)");
+                return true;
             }
             else
             {
                 //for invalid
                 Console.WriteLine("Invalid rect, try again");
+                return false;
                 throw new Exception("X or Y may be too big, rect no fit in viable space");
+
             }
         }
 

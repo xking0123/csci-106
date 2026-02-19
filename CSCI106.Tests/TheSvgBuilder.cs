@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace CSCI106.Tests
 {
     public class TheSvgBuilder
@@ -31,6 +33,14 @@ namespace CSCI106.Tests
             return svg.isOverlappingY(y, height);
         }
 
-        //add tests for parsed data...
+        [TestCase(1, 1, 1, 1, "blue", ExpectedResult = true)]//valid test
+        [TestCase(500, 500, 500, 500, "blabla", ExpectedResult = false)]//invalid test
+
+        public bool makeRect(int x, int y, int width, int height, string color)
+        {
+            var svg = SvgBuilder.New((7, 456));
+
+            return svg.makeRect(x, y, width, height, color);
+        }
     }
 }
