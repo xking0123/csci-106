@@ -1,18 +1,10 @@
-﻿using System.Text.RegularExpressions;
-
-namespace CSCI106
+﻿namespace CSCI106
 {
     public class SvgBuilder
     {
         private const string SVG_HEADER_TEMPLATE = "<svg width=\"{0}\" height=\"{1}\" xmlns=\"http://www.w3.org/2000/svg\">";
         private const string SVG_FOOTER = "</svg>";
 
-        //making a single string of readable data possible (regex101.com)
-        const string matchRectangle = @"\((?<x>\d+),\s*(?<y>\d+),\s*(?<width>\d+),\s*(?<height>\d+),\s*(?<color>[^)]+)\)";
-
-        
-
-        //add color to the rectangle as well?
         public void makeRect(int x, int y, int width, int height, string color)
         {
             //validate here

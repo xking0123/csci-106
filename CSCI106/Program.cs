@@ -4,7 +4,6 @@ namespace CSCI106
 {
     internal class Program
     {
-
         //making a single string of readable data possible (regex101.com)
         const string matchRectangle = @"\((?<x>\d+),\s*(?<y>\d+),\s*(?<width>\d+),\s*(?<height>\d+),\s*(?<color>[^)]+)\)";
 
@@ -18,7 +17,6 @@ namespace CSCI106
             //matching user input to singular string of data. BLACH MAGIC AHHHHHHH
             var matches = new Regex(matchRectangle).Matches(Console.ReadLine()!);
 
-            //once again... old way...
             foreach (var match in matches.ToList())
             {
                 var x = int.Parse(match.Groups["x"].ToString());
